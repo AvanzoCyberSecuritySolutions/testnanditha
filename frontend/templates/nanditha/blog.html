@@ -1,0 +1,624 @@
+{% load static %}
+<!DOCTYPE html>
+<html class="dark scroll-smooth" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Blog - Nanditha</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+    </style>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#ee9d2b",
+              "background-light": "#f8f7f6",
+              "background-dark": "#181511",
+            },
+            fontFamily: {
+              display: ["Manrope", "sans-serif"],
+              logo: ["Cormorant Garamond", "serif"],
+              body: ["Lato", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              lg: "1rem",
+              xl: "1.5rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-display" id="top">
+    <div
+      class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root"
+    >
+      <!-- Primary navigation header -->
+      <header
+        class="sticky top-0 z-50 w-full bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-charcoal/10 dark:border-white/10"
+      >
+        <div
+          class="mx-auto flex max-w-[960px] items-center justify-between whitespace-nowrap px-4 lg:px-10 py-3"
+        >
+          <div class="flex items-center gap-4 text-charcoal dark:text-white">
+            <div class="size-6 text-primary">
+              <svg
+                fill="none"
+                viewbox="0 0 48 48"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip0_6_543)">
+                  <path
+                    d="M42.1739 20.1739L27.8261 5.82609C29.1366 7.13663 28.3989 10.1876 26.2002 13.7654C24.8538 15.9564 22.9595 18.3449 20.6522 20.6522C18.3449 22.9595 15.9564 24.8538 13.7654 26.2002C10.1876 28.3989 7.13663 29.1366 5.82609 27.8261L20.1739 42.1739C21.4845 43.4845 24.5355 42.7467 28.1133 40.548C30.3042 39.2016 32.6927 37.3073 35 35C37.3073 32.6927 39.2016 30.3042 40.548 28.1133C42.7467 24.5355 43.4845 21.4845 42.1739 20.1739Z"
+                    fill="currentColor"
+                  ></path>
+                  <path
+                    clip-rule="evenodd"
+                    d="M7.24189 26.4066C7.31369 26.4411 7.64204 26.5637 8.52504 26.3738C9.59462 26.1438 11.0343 25.5311 12.7183 24.4963C14.7583 23.2426 17.0256 21.4503 19.238 19.238C21.4503 17.0256 23.2426 14.7583 24.4963 12.7183C25.5311 11.0343 26.1438 9.59463 26.3738 8.52504C26.5637 7.64204 26.4411 7.31369 26.4066 7.24189C26.345 7.21246 26.143 7.14535 25.6664 7.1918C24.9745 7.25925 23.9954 7.5498 22.7699 8.14278C20.3369 9.32007 17.3369 11.4915 14.4142 14.4142C11.4915 17.3369 9.32007 20.3369 8.14278 22.7699C7.5498 23.9954 7.25925 24.9745 7.1918 25.6664C7.14534 26.143 7.21246 26.345 7.24189 26.4066ZM29.9001 10.7285C29.4519 12.0322 28.7617 13.4172 27.9042 14.8126C26.465 17.1544 24.4686 19.6641 22.0664 22.0664C19.6641 24.4686 17.1544 26.465 14.8126 27.9042C13.4172 28.7617 12.0322 29.4519 10.7285 29.9001L21.5754 40.747C21.6001 40.7606 21.8995 40.931 22.8729 40.7217C23.9424 40.4916 25.3821 39.879 27.0661 38.8441C29.1062 37.5904 31.3734 35.7982 33.5858 33.5858C35.7982 31.3734 37.5904 29.1062 38.8441 27.0661C39.879 25.3821 40.4916 23.9425 40.7216 22.8729C40.931 21.8995 40.7606 21.6001 40.747 21.5754L29.9001 10.7285ZM29.2403 4.41187L43.5881 18.7597C44.9757 20.1473 44.9743 22.1235 44.6322 23.7139C44.2714 25.3919 43.4158 27.2666 42.252 29.1604C40.8128 31.5022 38.8165 34.012 36.4142 36.4142C34.012 38.8165 31.5022 40.8128 29.1604 42.252C27.2666 43.4158 25.3919 44.2714 23.7139 44.6322C22.1235 44.9743 20.1473 44.9757 18.7597 43.5881L4.41187 29.2403C3.29027 28.1187 3.08209 26.5973 3.21067 25.2783C3.34099 23.9415 3.8369 22.4852 4.54214 21.0277C5.96129 18.0948 8.43335 14.7382 11.5858 11.5858C14.7382 8.43335 18.0948 5.9613 21.0277 4.54214C22.4852 3.8369 23.9415 3.34099 25.2783 3.21067C26.5973 3.08209 28.1187 3.29028 29.2403 4.41187Z"
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                  ></path>
+                </g>
+                <defs>
+                  <clippath id="clip0_6_543">
+                    <rect fill="white" height="48" width="48"></rect>
+                  </clippath>
+                </defs>
+              </svg>
+            </div>
+            <a href="{% url "index" %}"
+              ><h2
+                class="font-logo text-2xl font-bold leading-tight tracking-wide"
+              >
+                Nanditha
+              </h2></a
+            >
+          </div>
+          <div class="hidden items-center gap-9 md:flex font-body">
+            <a
+              class="text-charcoal/80 dark:text-white/80 text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary transition-colors"
+              href="{% url "index" %}"
+              >Home</a
+            >
+            <a
+              class="text-charcoal/80 dark:text-white/80 text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary transition-colors"
+              href="/journey"
+              >Journey</a
+            >
+            <a
+              class="text-charcoal/80 dark:text-white/80 text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary transition-colors"
+              href="/gallery"
+              >Gallery</a
+            >
+            <a
+              class="text-charcoal/80 dark:text-white/80 text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary transition-colors"
+              href="/performances"
+              >Performances</a
+            >
+            <a
+              class="text-primary text-sm font-bold leading-normal relative"
+              href="/blog"
+              >Blog
+              <span
+                class="absolute -bottom-1 left-0 w-full h-0.5 bg-primary"
+              ></span>
+            </a>
+            <a
+              class="text-charcoal/80 dark:text-white/80 text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary transition-colors"
+              href="/contact"
+              >Contact</a
+            >
+          </div>
+          <button class="md:hidden text-charcoal dark:text-white" data-toggle="mobile-menu">
+            <span class="material-symbols-outlined">menu</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="md:hidden hidden fixed inset-0 z-50">
+        <div class="mobile-overlay absolute inset-0 bg-black/60"></div>
+        <div
+          class="mobile-panel absolute inset-y-0 right-0 h-full w-72 max-w-[80vw] border-l border-primary/20 shadow-xl transform translate-x-full transition-transform duration-300"
+          style="background-color: #27221c"
+          data-dark-bg="#1a1612"
+        >
+          <div class="flex items-center justify-between p-4 border-b border-primary/20">
+            <a href="{% url "index" %}" class="flex items-center gap-3">
+              <div class="size-6 text-primary">
+                <svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_6_543)">
+                    <path d="M42.1739 20.1739L27.8261 5.82609C29.1366 7.13663 28.3989 10.1876 26.2002 13.7654C24.8538 15.9564 22.9595 18.3449 20.6522 20.6522C18.3449 22.9595 15.9564 24.8538 13.7654 26.2002C10.1876 28.3989 7.13663 29.1366 5.82609 27.8261L20.1739 42.1739C21.4845 43.4845 24.5355 42.7467 28.1133 40.548C30.3042 39.2016 32.6927 37.3073 35 35C37.3073 32.6927 39.2016 30.3042 40.548 28.1133C42.7467 24.5355 43.4845 21.4845 42.1739 20.1739Z" fill="currentColor"></path>
+                    <path clip-rule="evenodd" d="M7.24189 26.4066C7.31369 26.4411 7.64204 26.5637 8.52504 26.3738C9.59462 26.1438 11.0343 25.5311 12.7183 24.4963C14.7583 23.2426 17.0256 21.4503 19.238 19.238C21.4503 17.0256 23.2426 14.7583 24.4963 12.7183C25.5311 11.0343 26.1438 9.59463 26.3738 8.52504C26.5637 7.64204 26.4411 7.31369 26.4066 7.24189C26.345 7.21246 26.143 7.14535 25.6664 7.1918C24.9745 7.25925 23.9954 7.5498 22.7699 8.14278C20.3369 9.32007 17.3369 11.4915 14.4142 14.4142C11.4915 17.3369 9.32007 20.3369 8.14278 22.7699C7.5498 23.9954 7.25925 24.9745 7.1918 25.6664C7.14534 26.143 7.21246 26.345 7.24189 26.4066ZM29.9001 10.7285C29.4519 12.0322 28.7617 13.4172 27.9042 14.8126C26.465 17.1544 24.4686 19.6641 22.0664 22.0664C19.6641 24.4686 17.1544 26.465 14.8126 27.9042C13.4172 28.7617 12.0322 29.4519 10.7285 29.9001L21.5754 40.747C21.6001 40.7606 21.8995 40.931 22.8729 40.7217C23.9424 40.4916 25.3821 39.879 27.0661 38.8441C29.1062 37.5904 31.3734 35.7982 33.5858 33.5858C35.7982 31.3734 37.5904 29.1062 38.8441 27.0661C39.879 25.3821 40.4916 23.9425 40.7216 22.8729C40.931 21.8995 40.7606 21.6001 40.747 21.5754L29.9001 10.7285ZM29.2403 4.41187L43.5881 18.7597C44.9757 20.1473 44.9743 22.1235 44.6322 23.7139C44.2714 25.3919 43.4158 27.2666 42.252 29.1604C40.8128 31.5022 38.8165 34.012 36.4142 36.4142C34.012 38.8165 31.5022 40.8128 29.1604 42.252C27.2666 43.4158 25.3919 44.2714 23.7139 44.6322C22.1235 44.9743 20.1473 44.9757 18.7597 43.5881L4.41187 29.2403C3.29027 28.1187 3.08209 26.5973 3.21067 25.2783C3.34099 23.9415 3.8369 22.4852 4.54214 21.0277C5.96129 18.0948 8.43335 14.7382 11.5858 11.5858C14.7382 8.43335 18.0948 5.9613 21.0277 4.54214C22.4852 3.8369 23.9415 3.34099 25.2783 3.21067C26.5973 3.08209 28.1187 3.29028 29.2403 4.41187Z" fill="currentColor" fill-rule="evenodd"></path>
+                  </g>
+                  <defs>
+                    <clippath id="clip0_6_543_mobile"><rect fill="white" height="48" width="48"></rect></clippath>
+                  </defs>
+                </svg>
+              </div>
+              <h3 class="font-logo text-xl font-bold text-white">Nanditha</h3>
+            </a>
+            <button class="text-white hover:text-primary transition-colors" data-close="mobile-menu">
+              <span class="material-symbols-outlined">close</span>
+            </button>
+          </div>
+          <nav class="flex flex-col gap-3 font-body p-4">
+            <a class="text-white/80 text-sm font-medium leading-normal hover:text-primary transition-colors" href="/index">Home</a>
+            <a class="text-white/80 text-sm font-medium leading-normal hover:text-primary transition-colors" href="/journey">Journey</a>
+            <a class="text-white/80 text-sm font-medium leading-normal hover:text-primary transition-colors" href="/gallery">Gallery</a>
+            <a class="text-white/80 text-sm font-medium leading-normal hover:text-primary transition-colors" href="/performances">Performances</a>
+            <a class="text-primary text-sm font-bold leading-normal hover:text-primary/80 transition-colors" href="/blog">Blog</a>
+            <a class="text-white/80 text-sm font-medium leading-normal hover:text-primary transition-colors" href="/contact">Contact</a>
+          </nav>
+        </div>
+      </div>
+
+      <div class="flex flex-1 justify-center">
+        <div class="mx-auto max-w-6xl w-full px-2 sm:px-3 lg:px-4 py-5">
+          <main class="flex-1">
+            <!-- Blog Header -->
+            <div class="py-10 text-center">
+              <h1 class="text-white text-4xl md:text-5xl font-black leading-tight tracking-[-0.033em] mb-4">
+                Insights & Stories
+              </h1>
+              <p class="text-[#b9ad9d] text-lg font-normal leading-normal max-w-2xl mx-auto">
+                Exploring the depths of Bharatanatyam and Kuchipudi through articles, reflections, and the philosophy behind classical dance
+              </p>
+            </div>
+
+            <!-- Search and Filter Section -->
+            <div class="py-8 flex flex-col gap-6">
+              <!-- Search Bar -->
+              <input
+                type="text"
+                id="searchInput"
+                placeholder="Search articles..."
+                class="w-full px-4 py-3 bg-[#27221c] border border-primary/30 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-primary transition-colors font-body"
+              />
+
+              <!-- Category Filter -->
+              <div class="flex flex-wrap gap-3">
+                <button
+                  class="category-filter px-4 py-2 rounded-lg font-body text-sm font-medium transition-all active"
+                  data-category="all"
+                >
+                  All Articles
+                </button>
+                <button
+                  class="category-filter px-4 py-2 rounded-lg font-body text-sm font-medium transition-all"
+                  data-category="bharatanatyam"
+                >
+                  Bharatanatyam
+                </button>
+                <button
+                  class="category-filter px-4 py-2 rounded-lg font-body text-sm font-medium transition-all"
+                  data-category="kuchipudi"
+                >
+                  Kuchipudi
+                </button>
+                <button
+                  class="category-filter px-4 py-2 rounded-lg font-body text-sm font-medium transition-all"
+                  data-category="technique"
+                >
+                  Technique
+                </button>
+                <button
+                  class="category-filter px-4 py-2 rounded-lg font-body text-sm font-medium transition-all"
+                  data-category="philosophy"
+                >
+                  Philosophy
+                </button>
+              </div>
+            </div>
+
+            <!-- Blog Posts Grid -->
+            <div id="blogsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-10">
+              <!-- Blog cards will be inserted here -->
+            </div>
+
+            <!-- No Results Message -->
+            <div id="noResults" class="hidden text-center py-12">
+              <p class="text-[#b9ad9d] text-lg font-normal">No articles found matching your search.</p>
+            </div>
+          </main>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer
+        class="bg-background-light dark:bg-background-dark border-t border-charcoal/10 dark:border-white/10 mt-16"
+      >
+        <div class="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
+          <div
+            class="flex flex-col items-center justify-between gap-3 sm:flex-row"
+          >
+            <div class="flex flex-col items-center sm:items-start gap-1">
+              <p class="text-sm text-charcoal/60 dark:text-stone-400">
+                © 2025 Nanditha. All Rights Reserved.
+              </p>
+              <a
+                href="mailto:nandithamenon1729@gmail.com"
+                class="text-xs text-charcoal/70 dark:text-stone-300 hover:text-primary dark:hover:text-primary transition-colors"
+              >
+                nandithamenon1729@gmail.com
+              </a>
+            </div>
+            <div class="flex items-center gap-4">
+              <a
+                class="text-charcoal/60 dark:text-stone-400 hover:text-primary dark:hover:text-primary transition-colors"
+                href="https://www.instagram.com/nanditha_dance?igsh=cnQzMzVqZ3AzOHhh"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg
+                  class="h-5 w-5"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewbox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect>
+                  <path
+                    d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                  ></path>
+                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- <script>
+      // Blog data
+      const blogss = [
+        {
+          id: 1,
+          title: "Understanding Mudras: The Language of Hands",
+          excerpt: "Discover how mudras form the foundation of classical Indian dance and express complex emotions and stories.",
+          category: "technique",
+          date: "December 1, 2025",
+          readTime: "5 min read",
+          image:"{% static 'nanditha/photos/IMG-20251119-WA0004.jpg' %}" 
+        },
+        {
+          id: 2,
+          title: "The Sacred Rhythm of Taalam",
+          excerpt: "Explore the mathematical precision and spiritual significance of taalam in Bharatanatyam performances.",
+          category: "bharatanatyam",
+          date: "November 28, 2025",
+          readTime: "7 min read",
+          image:"{% static 'nanditha/photos/IMG-20251119-WA0006.jpg' %}" 
+        },
+        {
+          id: 3,
+          title: "Kuchipudi: Dance as Devotion",
+          excerpt: "A personal journey into how Kuchipudi transformed my understanding of expression and spiritual connection.",
+          category: "kuchipudi",
+          date: "November 25, 2025",
+          readTime: "6 min read",
+          image:"{% static 'nanditha/photos/IMG-20251119-WA0017.jpg' %}"
+        },
+        {
+          id: 4,
+          title: "The Philosophy Behind Classical Dance",
+          excerpt: "Delving into the ancient texts and philosophical roots of Indian classical dance traditions.",
+          category: "philosophy",
+          date: "November 20, 2025",
+          readTime: "8 min read",
+          image:"{% static 'nanditha/photos/Lord%20Shiva.jpeg' %}"
+        },
+        {
+          id: 5,
+          title: "Mastering Aramandi: The Foundation Stance",
+          excerpt: "A technical breakdown of aramandi and why it's crucial to every movement in Bharatanatyam.",
+          category: "technique",
+          date: "November 18, 2025",
+          readTime: "5 min read",
+          image:"{% static 'nanditha/photos/IMG-20251119-WA0004.jpg' %}" 
+        },
+        {
+          id: 6,
+          title: "The Evolution of Kuchipudi Through Centuries",
+          excerpt: "Tracing the rich history and transformation of Kuchipudi from temple traditions to contemporary stages.",
+          category: "kuchipudi",
+          date: "November 15, 2025",
+          readTime: "9 min read",
+          image:"{% static 'nanditha/photos/IMG-20251119-WA0006.jpg' %}" 
+        }
+      ];
+
+      let currentCategory = "all";
+      let searchTerm = "";
+
+      // Render blog cards
+      function renderBlogs() {
+        const container = document.getElementById("blogsContainer");
+        const noResults = document.getElementById("noResults");
+        
+        const filtered = blogs.filter(blog => {
+          const matchesCategory = currentCategory === "all" || blog.category === currentCategory;
+          const matchesSearch = blog.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                               blog.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
+          return matchesCategory && matchesSearch;
+        });
+
+        if (filtered.length === 0) {
+          container.innerHTML = "";
+          noResults.classList.remove("hidden");
+          return;
+        }
+
+        noResults.classList.add("hidden");
+        container.innerHTML = filtered.map(blog => `
+          <article class="flex flex-col bg-[#27221c] rounded-xl overflow-hidden hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 group">
+            <div class="w-full aspect-[4/3] bg-cover bg-center overflow-hidden" style="background-image: url('${blog.image}')">
+              <div class="w-full h-full bg-black/20 group-hover:bg-black/40 transition-all duration-300"></div>
+            </div>
+            <div class="p-5 flex flex-col gap-3 flex-1">
+              <div class="flex items-center justify-between gap-2">
+                <span class="text-primary text-xs font-bold uppercase tracking-wide">
+                  ${blog.category}
+                </span>
+                <span class="text-[#b9ad9d] text-xs font-normal">
+                  ${blog.readTime}
+                </span>
+              </div>
+              <h3 class="text-white text-lg font-semibold leading-tight">
+                ${blog.title}
+              </h3>
+              <p class="text-[#b9ad9d] text-sm font-normal leading-relaxed flex-1">
+                ${blog.excerpt}
+              </p>
+              <div class="flex items-center justify-between pt-3 border-t border-white/10">
+                <span class="text-white/60 text-xs font-normal">
+                  ${blog.date}
+                </span>
+                <a href="#" class="text-primary text-sm font-semibold hover:text-primary/80 transition-colors">
+                  Read More →
+                </a>
+              </div>
+            </div>
+          </article>
+        `).join("");
+      }
+      
+
+      // Search functionality
+      document.getElementById("searchInput").addEventListener("input", (e) => {
+        searchTerm = e.target.value;
+        renderBlogs();
+      });
+
+      // Category filter functionality
+      document.querySelectorAll(".category-filter").forEach(button => {
+        button.addEventListener("click", (e) => {
+          document.querySelectorAll(".category-filter").forEach(b => {
+            b.classList.remove("bg-primary", "text-background-dark");
+            b.classList.add("bg-[#3a3530]", "text-white");
+          });
+          e.target.classList.remove("bg-[#3a3530]", "text-white");
+          e.target.classList.add("bg-primary", "text-background-dark");
+          
+          currentCategory = e.target.dataset.category;
+          renderBlogs();
+        });
+      });
+
+      // Mobile menu script (same as index.html)
+      document.addEventListener("DOMContentLoaded", function () {
+        var headers = document.querySelectorAll("header");
+        var menu = document.getElementById("mobile-menu");
+        var panel = menu ? menu.querySelector(".mobile-panel") : null;
+        var overlay = menu ? menu.querySelector(".mobile-overlay") : null;
+
+        if (panel) {
+          var htmlElement = document.documentElement;
+          var darkBg = panel.getAttribute("data-dark-bg");
+          var applyPanelBackground = function () {
+            if (htmlElement.classList.contains("dark") && darkBg) {
+              panel.style.backgroundColor = darkBg;
+            } else {
+              panel.style.backgroundColor = "#27221c";
+            }
+          };
+          applyPanelBackground();
+          var observer = new MutationObserver(function (mutations) {
+            mutations.forEach(function (mutation) {
+              if (
+                mutation.type === "attributes" &&
+                mutation.attributeName === "class"
+              ) {
+                applyPanelBackground();
+              }
+            });
+          });
+          observer.observe(htmlElement, {
+            attributes: true,
+            attributeFilter: ["class"],
+          });
+        }
+
+        function openMenu(button) {
+          if (!menu || !panel) return;
+          menu.classList.remove("hidden");
+          requestAnimationFrame(function () {
+            panel.classList.remove("translate-x-full");
+          });
+          var icon = button.querySelector(".material-symbols-outlined");
+          if (icon) icon.textContent = "close";
+          button.setAttribute("aria-expanded", "true");
+        }
+
+        function closeMenu(button) {
+          if (!menu || !panel) return;
+          panel.classList.add("translate-x-full");
+          setTimeout(function () {
+            menu.classList.add("hidden");
+          }, 300);
+          var icon = button.querySelector(".material-symbols-outlined");
+          if (icon) icon.textContent = "menu";
+          if (button) button.setAttribute("aria-expanded", "false");
+        }
+
+        headers.forEach(function (header) {
+          var button =
+            header.querySelector('button[data-toggle="mobile-menu"]') ||
+            header.querySelector('button[class*="md:hidden"]');
+          if (!button || !menu) return;
+          button.setAttribute("aria-expanded", "false");
+          button.setAttribute("aria-controls", "mobile-menu");
+          button.addEventListener("click", function () {
+            var isOpen = !panel.classList.contains("translate-x-full");
+            if (isOpen) closeMenu(button);
+            else openMenu(button);
+          });
+          if (overlay)
+            overlay.addEventListener("click", function () {
+              closeMenu(button);
+            });
+        });
+
+        var closeButton = document.querySelector(
+          'button[data-close="mobile-menu"]'
+        );
+        if (closeButton) {
+          closeButton.addEventListener("click", function () {
+            var toggleButton = document.querySelector(
+              'button[data-toggle="mobile-menu"]'
+            );
+            if (toggleButton) closeMenu(toggleButton);
+          });
+        }
+
+        // Initial render
+        renderBlogs();
+      });
+    </script>
+
+    <script>
+   const blogs = JSON.parse('{{ blogs_json|escapejs }}');
+</script> -->
+
+
+<script>
+    // 1. Load Django blogs
+    const blogs = JSON.parse('{{ blogs_json|escapejs }}');
+
+    let currentCategory = "all";
+    let searchTerm = "";
+
+    // 2. Render blogs dynamically
+    function renderBlogs() {
+        const container = document.getElementById("blogsContainer");
+        const noResults = document.getElementById("noResults");
+
+        const filtered = blogs.filter(blog => {
+            const matchesCategory =
+                currentCategory === "all" || blog.category === currentCategory;
+
+            const matchesSearch =
+                blog.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                blog.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
+
+            return matchesCategory && matchesSearch;
+        });
+
+        if (filtered.length === 0) {
+            container.innerHTML = "";
+            noResults.classList.remove("hidden");
+            return;
+        }
+
+        noResults.classList.add("hidden");
+
+        container.innerHTML = filtered
+            .map(
+                blog => `
+                <article class="flex flex-col bg-[#27221c] rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300">
+                    <div class="w-full aspect-[4/3] bg-cover bg-center" 
+                         style="background-image: url('${blog.image}')"></div>
+
+                    <div class="p-5 flex flex-col gap-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-primary text-xs font-bold uppercase tracking-wide">${blog.category}</span>
+                            <span class="text-[#b9ad9d] text-xs">${blog.readTime}</span>
+                        </div>
+
+                        <h3 class="text-white text-lg font-semibold">${blog.title}</h3>
+
+                        <p class="text-[#b9ad9d] text-sm flex-1">${blog.excerpt}</p>
+
+                        <div class="flex items-center justify-between pt-3 border-t border-white/10">
+                            <span class="text-white/60 text-xs">${blog.date}</span>
+                            <a href="/blog/${blog.id}/" class="text-primary text-sm font-semibold hover:text-primary/80">
+                                Read More →
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                `
+            )
+            .join("");
+    }
+
+    // 3. Search
+    document.getElementById("searchInput").addEventListener("input", (e) => {
+        searchTerm = e.target.value;
+        renderBlogs();
+    });
+
+    // 4. Category filter
+    document.querySelectorAll(".category-filter").forEach(button => {
+        button.addEventListener("click", (e) => {
+            document.querySelectorAll(".category-filter").forEach(b => {
+                b.classList.remove("bg-primary", "text-background-dark");
+                b.classList.add("bg-[#3a3530]", "text-white");
+            });
+
+            e.target.classList.remove("bg-[#3a3530]", "text-white");
+            e.target.classList.add("bg-primary", "text-background-dark");
+
+            currentCategory = e.target.dataset.category;
+            renderBlogs();
+        });
+    });
+
+    // 5. Initial render
+    document.addEventListener("DOMContentLoaded", function () {
+        renderBlogs();
+    });
+</script>
+
+  </body>
+</html>

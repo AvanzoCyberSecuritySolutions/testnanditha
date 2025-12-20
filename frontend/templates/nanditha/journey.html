@@ -1,0 +1,250 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html class="dark scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nanditha - My Journey in Dance</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&amp;family=Lato:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee9d2b",
+                        "background-light": "#F9F6F2",
+                        "background-dark": "#1A1A1A",
+                        "charcoal": "#333333",
+                        "terracotta": "#B85C3A",
+                    },
+                    fontFamily: {
+                        "display": ["Cormorant Garamond", "serif"],
+                        "body": ["Lato", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-body text-charcoal dark:text-stone-300" id="top">
+<div class="relative flex min-h-screen w-full flex-col">
+<!-- Sticky site header -->
+<header class="sticky top-0 z-50 w-full bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-charcoal/10 dark:border-white/10">
+<div class="mx-auto flex max-w-[960px] items-center justify-between whitespace-nowrap px-4 lg:px-10 py-3">
+<div class="flex items-center gap-4 text-charcoal dark:text-white">
+<div class="size-6 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_543)">
+<path d="M42.1739 20.1739L27.8261 5.82609C29.1366 7.13663 28.3989 10.1876 26.2002 13.7654C24.8538 15.9564 22.9595 18.3449 20.6522 20.6522C18.3449 22.9595 15.9564 24.8538 13.7654 26.2002C10.1876 28.3989 7.13663 29.1366 5.82609 27.8261L20.1739 42.1739C21.4845 43.4845 24.5355 42.7467 28.1133 40.548C30.3042 39.2016 32.6927 37.3073 35 35C37.3073 32.6927 39.2016 30.3042 40.548 28.1133C42.7467 24.5355 43.4845 21.4845 42.1739 20.1739Z" fill="currentColor"></path>
+<path clip-rule="evenodd" d="M7.24189 26.4066C7.31369 26.4411 7.64204 26.5637 8.52504 26.3738C9.59462 26.1438 11.0343 25.5311 12.7183 24.4963C14.7583 23.2426 17.0256 21.4503 19.238 19.238C21.4503 17.0256 23.2426 14.7583 24.4963 12.7183C25.5311 11.0343 26.1438 9.59463 26.3738 8.52504C26.5637 7.64204 26.4411 7.31369 26.4066 7.24189C26.345 7.21246 26.143 7.14535 25.6664 7.1918C24.9745 7.25925 23.9954 7.5498 22.7699 8.14278C20.3369 9.32007 17.3369 11.4915 14.4142 14.4142C11.4915 17.3369 9.32007 20.3369 8.14278 22.7699C7.5498 23.9954 7.25925 24.9745 7.1918 25.6664C7.14534 26.143 7.21246 26.345 7.24189 26.4066ZM29.9001 10.7285C29.4519 12.0322 28.7617 13.4172 27.9042 14.8126C26.465 17.1544 24.4686 19.6641 22.0664 22.0664C19.6641 24.4686 17.1544 26.465 14.8126 27.9042C13.4172 28.7617 12.0322 29.4519 10.7285 29.9001L21.5754 40.747C21.6001 40.7606 21.8995 40.931 22.8729 40.7217C23.9424 40.4916 25.3821 39.879 27.0661 38.8441C29.1062 37.5904 31.3734 35.7982 33.5858 33.5858C35.7982 31.3734 37.5904 29.1062 38.8441 27.0661C39.879 25.3821 40.4916 23.9425 40.7216 22.8729C40.931 21.8995 40.7606 21.6001 40.747 21.5754L29.9001 10.7285ZM29.2403 4.41187L43.5881 18.7597C44.9757 20.1473 44.9743 22.1235 44.6322 23.7139C44.2714 25.3919 43.4158 27.2666 42.252 29.1604C40.8128 31.5022 38.8165 34.012 36.4142 36.4142C34.012 38.8165 31.5022 40.8128 29.1604 42.252C27.2666 43.4158 25.3919 44.2714 23.7139 44.6322C22.1235 44.9743 20.1473 44.9757 18.7597 43.5881L4.41187 29.2403C3.29027 28.1187 3.08209 26.5973 3.21067 25.2783C3.34099 23.9415 3.8369 22.4852 4.54214 21.0277C5.96129 18.0948 8.43335 14.7382 11.5858 11.5858C14.7382 8.43335 18.0948 5.9613 21.0277 4.54214C22.4852 3.8369 23.9415 3.34099 25.2783 3.21067C26.5973 3.08209 28.1187 3.29028 29.2403 4.41187Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs>
+<clippath id="clip0_6_543">
+<rect fill="white" height="48" width="48"></rect>
+</clippath>
+</defs>
+</svg>
+</div>
+<a href="{% url "index" %}"><h2 class="font-display text-2xl font-bold leading-tight tracking-wide">Nanditha</h2></a>
+</div>
+<div class="hidden items-center gap-9 md:flex">
+<a class="text-charcoal/80 dark:text-white/80 text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary transition-colors" href="{% url "index" %}">Home</a>
+<a class="text-primary text-sm font-bold leading-normal relative" href="#top">Journey
+                        <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-primary"></span>
+</a>
+<a class="text-charcoal/80 dark:text-white/80 text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary transition-colors" href="/gallery">Gallery</a>
+<a class="text-charcoal/80 dark:text-white/80 text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary transition-colors" href="/performances">Performances</a>
+<a class="text-charcoal/80 dark:text-white/80 text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary transition-colors" href="/blog">Blog</a>
+<a class="text-charcoal/80 dark:text-white/80 text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary transition-colors" href="/contact">Contact</a>
+</div>
+<button class="md:hidden text-charcoal dark:text-white" data-toggle="mobile-menu">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<div id="mobile-menu" class="md:hidden hidden fixed inset-0 z-50">
+  <div class="mobile-overlay absolute inset-0 bg-black/60"></div>
+  <div class="mobile-panel absolute inset-y-0 right-0 w-72 max-w-[80vw] bg-[#27221c] dark:bg-[#1a1612] border-l border-primary/20 shadow-xl transform translate-x-full transition-transform duration-300">
+    <div class="flex items-center justify-between p-4 border-b border-primary/20">
+      <a href="{% url "index" %}" class="flex items-center gap-3">
+        <div class="size-6 text-primary">
+          <svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_6_543)">
+              <path d="M42.1739 20.1739L27.8261 5.82609C29.1366 7.13663 28.3989 10.1876 26.2002 13.7654C24.8538 15.9564 22.9595 18.3449 20.6522 20.6522C18.3449 22.9595 15.9564 24.8538 13.7654 26.2002C10.1876 28.3989 7.13663 29.1366 5.82609 27.8261L20.1739 42.1739C21.4845 43.4845 24.5355 42.7467 28.1133 40.548C30.3042 39.2016 32.6927 37.3073 35 35C37.3073 32.6927 39.2016 30.3042 40.548 28.1133C42.7467 24.5355 43.4845 21.4845 42.1739 20.1739Z" fill="currentColor"></path>
+              <path clip-rule="evenodd" d="M7.24189 26.4066C7.31369 26.4411 7.64204 26.5637 8.52504 26.3738C9.59462 26.1438 11.0343 25.5311 12.7183 24.4963C14.7583 23.2426 17.0256 21.4503 19.238 19.238C21.4503 17.0256 23.2426 14.7583 24.4963 12.7183C25.5311 11.0343 26.1438 9.59463 26.3738 8.52504C26.5637 7.64204 26.4411 7.31369 26.4066 7.24189C26.345 7.21246 26.143 7.14535 25.6664 7.1918C24.9745 7.25925 23.9954 7.5498 22.7699 8.14278C20.3369 9.32007 17.3369 11.4915 14.4142 14.4142C11.4915 17.3369 9.32007 20.3369 8.14278 22.7699C7.5498 23.9954 7.25925 24.9745 7.1918 25.6664C7.14534 26.143 7.21246 26.345 7.24189 26.4066ZM29.9001 10.7285C29.4519 12.0322 28.7617 13.4172 27.9042 14.8126C26.465 17.1544 24.4686 19.6641 22.0664 22.0664C19.6641 24.4686 17.1544 26.465 14.8126 27.9042C13.4172 28.7617 12.0322 29.4519 10.7285 29.9001L21.5754 40.747C21.6001 40.7606 21.8995 40.931 22.8729 40.7217C23.9424 40.4916 25.3821 39.879 27.0661 38.8441C29.1062 37.5904 31.3734 35.7982 33.5858 33.5858C35.7982 31.3734 37.5904 29.1062 38.8441 27.0661C39.879 25.3821 40.4916 23.9425 40.7216 22.8729C40.931 21.8995 40.7606 21.6001 40.747 21.5754L29.9001 10.7285ZM29.2403 4.41187L43.5881 18.7597C44.9757 20.1473 44.9743 22.1235 44.6322 23.7139C44.2714 25.3919 43.4158 27.2666 42.252 29.1604C40.8128 31.5022 38.8165 34.012 36.4142 36.4142C34.012 38.8165 31.5022 40.8128 29.1604 42.252C27.2666 43.4158 25.3919 44.2714 23.7139 44.6322C22.1235 44.9743 20.1473 44.9757 18.7597 43.5881L4.41187 29.2403C3.29027 28.1187 3.08209 26.5973 3.21067 25.2783C3.34099 23.9415 3.8369 22.4852 4.54214 21.0277C5.96129 18.0948 8.43335 14.7382 11.5858 11.5858C14.7382 8.43335 18.0948 5.9613 21.0277 4.54214C22.4852 3.8369 23.9415 3.34099 25.2783 3.21067C26.5973 3.08209 28.1187 3.29028 29.2403 4.41187Z" fill="currentColor" fill-rule="evenodd"></path>
+            </g>
+            <defs>
+              <clippath id="clip0_6_543_mobile_journey"><rect fill="white" height="48" width="48"></rect></clippath>
+            </defs>
+          </svg>
+        </div>
+        <h3 class="font-display text-xl font-bold text-white">Nanditha</h3>
+      </a>
+      <button class="text-white hover:text-primary transition-colors" data-close="mobile-menu">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+    <nav class="flex flex-col gap-3 font-body p-4">
+      <a class="text-white/80 text-sm font-medium leading-normal hover:text-primary transition-colors" href="{% url "index" %}">Home</a>
+      <a class="text-primary text-sm font-bold leading-normal hover:text-primary/80 transition-colors" href="/journey">Journey</a>
+      <a class="text-white/80 text-sm font-medium leading-normal hover:text-primary transition-colors" href="/gallery">Gallery</a>
+      <a class="text-white/80 text-sm font-medium leading-normal hover:text-primary transition-colors" href="/performances">Performances</a>
+      <a class="text-white/80 text-sm font-medium leading-normal hover:text-primary transition-colors" href="/blog">Blog</a>
+      <a class="text-white/80 text-sm font-medium leading-normal hover:text-primary transition-colors" href="/contact">Contact</a>
+    </nav>
+  </div>
+</div>
+<main class="flex-grow">
+<div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+<!-- Hero image highlighting the journey theme -->
+<div class="relative min-h-[60vh] bg-cover bg-center flex flex-col justify-end overflow-hidden" data-alt="A female Indian classical dancer in a dynamic pose, mid-performance, with expressive hand gestures and traditional attire." style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 40%), url("{% static 'nanditha/photos/3.jpg' %}');'>
+<div class="p-8 md:p-12">
+<h1 class="text-white font-display text-5xl md:text-7xl font-semibold tracking-tight">My Journey in Dance</h1>
+</div>
+</div>
+<!-- Timeline storytelling grid -->
+<div class="grid grid-cols-12 gap-x-8 gap-y-16 mt-16 lg:mt-24">
+<div class="col-span-12 lg:col-span-7 lg:col-start-2">
+<p class="text-lg md:text-xl leading-relaxed text-charcoal/90 dark:text-stone-300/90">People often assume I grew up loving dance — that it came to me naturally and effortlessly. But the truth is very different.</p>
+</div>
+<div class="col-span-12 lg:col-span-10 lg:col-start-3 grid grid-cols-10 gap-x-8 gap-y-12">
+<div class="col-span-10 md:col-span-2">
+<p class="font-display text-6xl text-primary font-light">01</p>
+</div>
+<div class="col-span-10 md:col-span-8">
+<h3 class="font-display text-3xl font-semibold mb-3 text-charcoal dark:text-white">The Beginning</h3>
+<p class="text-base leading-7">I was introduced to dance the moment I was born. But when I joined a dance class at the age of three, I didn’t enjoy it at all. I didn’t like the discipline. Yet I continued — not out of passion, but because I was expected to. I was on stage, but not in the art.</p>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-6 lg:col-start-1">
+<div class="w-full bg-top bg-no-repeat aspect-[4/5] bg-cover" data-alt="A young girl in a simple classical dance practice costume, with an aspiring and focused expression." style="background-image: url('{% static 'nanditha/photos/1.png' %}');"></div>
+</div>
+<div class="col-span-12 lg:col-span-5 lg:col-start-8">
+<div class="w-full bg-top bg-no-repeat aspect-[4/5] bg-cover" data-alt="A detailed shot of a dancer's feet with ghungroo (ankle bells), capturing motion." style="background-image: url('{% static 'nanditha/photos/4.png' %}');"></div>
+</div>
+<div class="col-span-12 lg:col-span-10 lg:col-start-2 grid grid-cols-10 gap-x-8 gap-y-12">
+<div class="col-span-10 md:col-span-2">
+<p class="font-display text-6xl text-primary font-light">02</p>
+</div>
+<div class="col-span-10 md:col-span-8">
+<h3 class="font-display text-3xl font-semibold mb-3 text-charcoal dark:text-white">The Turning Point</h3>
+<p class="text-base leading-7">Everything changed when I turned 13. I realised that if I was going to continue, I wanted to do it with intention. From that moment, I started practicing with my whole being. I grew from being “just okay” to understanding the emotion behind movement.</p>
+</div>
+</div>
+<!-- Pull quote for emphasis -->
+<div class="col-span-12 lg:col-span-7 lg:col-start-3 bg-terracotta/10 dark:bg-terracotta/20 p-8 lg:p-12">
+<blockquote class="text-center">
+<p class="font-display text-3xl md:text-4xl leading-snug font-medium text-terracotta dark:text-terracotta/90">"When I dance, I step out of my present struggles and into a space where I can just be."</p>
+<cite class="mt-4 block text-charcoal/70 dark:text-stone-300/70 not-italic">- Nanditha</cite>
+</blockquote>
+</div>
+<div class="col-span-12 lg:col-span-10 lg:col-start-2 grid grid-cols-10 gap-x-8 gap-y-12">
+<div class="col-span-10 md:col-span-2">
+<p class="font-display text-6xl text-primary font-light">03</p>
+</div>
+<div class="col-span-10 md:col-span-8">
+<h3 class="font-display text-3xl font-semibold mb-3 text-charcoal dark:text-white">A New Door</h3>
+<p class="text-base leading-7">At 14, I began teaching, and that opened a new door. Learning became deeper. Expression became clearer. Dance no longer felt like something I had to do — it became something I chose.</p>
+</div>
+</div>
+<!-- Full-width performance image -->
+<div class="col-span-12">
+<div class="w-full h-[60vh] bg-top bg-no-repeat bg-cover" data-alt="A powerful, wide-shot of Nanditha on stage during her Arangetram, captured in a dramatic pose under the spotlight." style="background-image: url('{% static 'nanditha/photos/5.png' %}');"></div>
+</div>
+<div class="col-span-12 lg:col-span-5 lg:col-start-2">
+<div class="flex flex-col gap-8">
+<div>
+<p class="font-display text-6xl text-primary font-light">04</p>
+<h3 class="font-display text-3xl font-semibold mt-4 mb-3 text-charcoal dark:text-white">Connection</h3>
+<p class="text-base leading-7">Real appreciation started coming in when I was 17. Not just for technique, but for the way I told stories through movement. For the way I felt on stage. For the way I connected.</p>
+</div>
+<div>
+<p class="font-display text-6xl text-primary font-light">05</p>
+<h3 class="font-display text-3xl font-semibold mt-4 mb-3 text-charcoal dark:text-white">The Present</h3>
+<p class="text-base leading-7">Now, as I approach 20, dance is communication, storytelling, healing, and spiritual. This journey wasn’t built on perfection — it was built on persistence. Dance didn’t choose me. I didn’t choose dance. We found each other halfway.</p>
+</div>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-5 lg:col-start-7">
+<div class="w-full bg-top bg-no-repeat aspect-[4/5] bg-cover" data-alt="A mature, expressive portrait of Nanditha in full costume, looking thoughtfully into the distance." style="background-image: url('{% static 'nanditha/photos/6.jpg' %}');"></div>
+</div>
+</div>
+</div>
+</main>
+<!-- Page footer -->
+<footer class="bg-background-light dark:bg-background-dark border-t border-charcoal/10 dark:border-white/10 mt-16">
+<div class="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
+<div class="flex flex-col items-center justify-between gap-4 sm:flex-row">
+<p class="text-xs text-charcoal/60 dark:text-stone-400">© 2025 Nanditha. All Rights Reserved.</p>
+<div class="flex items-center gap-4">
+<a class="text-charcoal/60 dark:text-stone-400 hover:text-primary dark:hover:text-primary transition-colors" data-alt="Social media link: Instagram" href="https://www.instagram.com/nanditha_dance?igsh=cnQzMzVqZ3AzOHhh" target="_blank" rel="noopener noreferrer">
+<svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewbox="0 0 24 24">
+<path clip-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 012.792 2.792c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-2.792 2.792c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.012-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-2.792-2.792c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 012.792-2.792c.636-.247 1.363-.416 2.427-.465C9.53 2.013 9.884 2 12.315 2zM12 7.044a5.271 5.271 0 00-5.271 5.271A5.271 5.271 0 0012 17.586a5.271 5.271 0 005.271-5.271A5.271 5.271 0 0012 7.044zm0 8.526a3.255 3.255 0 110-6.51 3.255 3.255 0 010 6.51zm6.057-7.312a1.21 1.21 0 11-2.42 0 1.21 1.21 0 012.42 0z" fill-rule="evenodd"></path>
+</svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var headers = document.querySelectorAll('header');
+  var menu = document.getElementById('mobile-menu');
+  var panel = menu ? menu.querySelector('.mobile-panel') : null;
+  var overlay = menu ? menu.querySelector('.mobile-overlay') : null;
+  function openMenu(button) {
+    if (!menu || !panel) return;
+    menu.classList.remove('hidden');
+    requestAnimationFrame(function () { panel.classList.remove('translate-x-full'); });
+    var icon = button.querySelector('.material-symbols-outlined');
+    if (icon) icon.textContent = 'close';
+    button.setAttribute('aria-expanded', 'true');
+  }
+  function closeMenu(button) {
+    if (!menu || !panel) return;
+    panel.classList.add('translate-x-full');
+    setTimeout(function () { menu.classList.add('hidden'); }, 300);
+    var icon = button.querySelector('.material-symbols-outlined');
+    if (icon) icon.textContent = 'menu';
+    if (button) button.setAttribute('aria-expanded', 'false');
+  }
+  headers.forEach(function (header) {
+    var button = header.querySelector('button[data-toggle="mobile-menu"]') || header.querySelector('button[class*="md:hidden"]');
+    if (!button || !menu) return;
+    button.setAttribute('aria-expanded', 'false');
+    button.setAttribute('aria-controls', 'mobile-menu');
+    button.addEventListener('click', function () {
+      var isOpen = !panel.classList.contains('translate-x-full');
+      if (isOpen) closeMenu(button); else openMenu(button);
+    });
+    if (overlay) overlay.addEventListener('click', function () { closeMenu(button); });
+  });
+  var closeButton = document.querySelector('button[data-close="mobile-menu"]');
+  if (closeButton) {
+    closeButton.addEventListener('click', function () {
+      var toggleButton = document.querySelector('button[data-toggle="mobile-menu"]');
+      if (toggleButton) closeMenu(toggleButton);
+    });
+  }
+});
+</script>
+</body>
+
+</html>
