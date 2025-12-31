@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-wab1fd2st=(@hwli!(mez8*@&bndfg6h#be6=4dgw@+(a*4@io
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["*","https://test.pattathilnandhitha.in"]
 
 
 # Application definition
@@ -71,7 +71,13 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
+CSRF_TRUSTED_ORGINS = ['https://test.pattathilnandhitha.in']
 
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
