@@ -34,7 +34,7 @@
                 <p class="text-gray-600 mb-6">Sign in to manage your portfolio.</p>
 
                 <!-- Login Form -->
-                <form method="POST" class="space-y-4">
+                <form method="POST" class="space-y-4" action="{% url 'admin_login' %}">
                     {% csrf_token %}
                     
                     <div>
