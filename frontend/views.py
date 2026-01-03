@@ -35,11 +35,17 @@ def admin_login(request):
 
         try:
             admin = AdminUser.objects.get(email=email, password=password)
+            
+            # SET THIS EXACT KEY
             request.session['admin_logged_in'] = True
-            return redirect("admin_dashboard") 
+            request.session['admin_email'] = admin.email
+
+            return redirect('admin_dashboard')
+
         except AdminUser.DoesNotExist:
-            messages.error(request, "Invalid Login")
-    
+            messages.error(request, "Invalid email or password")
+            return redirect('admin_login')
+
     return render(request, "admin/admin_login.html")
 
 
