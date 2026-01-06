@@ -18,7 +18,7 @@ urlpatterns = [
     path('myadmin/edit-post/<int:post_id>/', views.edit_post, name='edit_post'),
     path('myadmin/delete-post/<int:post_id>/', views.delete_post, name='delete_post'),
     path('blog/<int:post_id>/', views.blog_detail, name='blog_detail'),
-    path('myadmin/gallery/', views.admin_gallery, name='admin_gallery'),
+    # path('myadmin/gallery/', views.admin_gallery, name='admin_gallery'),
     path('myadmin/gallery/delete/<int:pk>/', views.delete_gallery_image, name='delete_gallery_image'),
     path("myadmin/gallery/edit/", views.edit_gallery_image, name="edit_gallery_image"),
 
