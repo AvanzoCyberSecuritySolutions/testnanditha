@@ -23,10 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-wab1fd2st=(@hwli!(mez8*@&bndfg6h#be6=4dgw@+(a*4@io'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["*","https://test.pattathilnandhitha.in"]
-
+ALLOWED_HOSTS = ["test.pattathilnanditha.in", "localhost", "127.0.0.1"]
 
 # Application definition
 
@@ -70,8 +69,9 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
-CSRF_TRUSTED_ORGINS = ['https://test.pattathilnandhitha.in']
+CSRF_TRUSTED_ORIGINS = ['https://test.pattathilnanditha.in']
 
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
@@ -142,6 +142,25 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
+WHITENOISE_AUTOREFRESH = True
+WHITENOISE_USE_FINDERS = True
+# Find the TEMPLATES section and add media processor
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',  # ADD THIS LINE
+            ],
+        },
+    },
+]
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
