@@ -50,7 +50,6 @@ def admin_login(request):
 
 
 
-
 def admin_dashboard(request):
     if not request.session.get('admin_logged_in'):
         return redirect("admin_login")
