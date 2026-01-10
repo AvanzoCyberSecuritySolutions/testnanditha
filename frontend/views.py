@@ -19,8 +19,8 @@ def blog(request):
 def contact(request):
     return render(request, 'nanditha/contact.html')
 
-# def gallery(request):
-#     return render(request, 'nanditha/gallery.html')
+def gallery(request):
+    return render(request, 'nanditha/gallery.html')
 
 def journey(request):
     return render(request, 'nanditha/journey.html')
